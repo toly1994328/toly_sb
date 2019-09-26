@@ -3,6 +3,7 @@ package com.toly1994.toly_sb.dao;
 import com.toly1994.toly_sb.model.Widget;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface WidgetDao {
@@ -14,4 +15,9 @@ public interface WidgetDao {
     }
 
     List<Widget> selectAll();
+
+    Optional<Widget> selectById(UUID id);
+
+    int deleteById(UUID id);
+    int updateById(UUID id, Widget widget);
 }

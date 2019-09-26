@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class WidgetService {
@@ -23,5 +25,18 @@ public class WidgetService {
 
     public List<Widget> getAll(){
         return widgetDao.selectAll();
+    }
+
+    public Optional<Widget> getById(UUID id){
+        return  widgetDao.selectById(id);
+    }
+
+    public int updateById(UUID id,Widget newWidget){
+        return  widgetDao.updateById(id,newWidget);
+    }
+
+
+    public int deleteById(UUID id){
+        return  widgetDao.deleteById(id);
     }
 }
